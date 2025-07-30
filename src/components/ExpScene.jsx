@@ -1,11 +1,20 @@
-import React, { useEffect, useState, useRef } from "react";
-import { useThree }                           from "@react-three/fiber";
-import { OrthographicCamera }                 from "@react-three/drei";
-import { useSpring, a, config }               from "@react-spring/three";
-import ExpFloatLogo                           from "./ExpFloatLogo";
+// src/components/ExpScene.jsx
+import React, { useEffect, useState, useRef, Suspense } from "react";
+import { useThree }                                 from "@react-three/fiber";
+import { OrthographicCamera }                       from "@react-three/drei";
+import { useSpring, a, config }                     from "@react-spring/three";
+import { lazyWithPreload }                          from "../utilities/lazyWithPreload";
+
+// code‑split your heavy <ExpFloatLogo> component
+const ExpFloatLogo = lazyWithPreload(() => import("./ExpFloatLogo"));
 
 export default function ExpScene({
-  dims, layoutFrom, layoutTo, visible, prevVisible, topRowHeight
+  dims,
+  layoutFrom,
+  layoutTo,
+  visible,
+  prevVisible,
+  topRowHeight = 0
 }) {
   const firstMount = useRef(true);
   const { width, gridH } = dims;
@@ -22,7 +31,7 @@ export default function ExpScene({
   }, [size.width, size.height, width, gridH, topRowHeight, camera, gl]);
 
   const [data, setData] = useState({ items: prevVisible, layout: layoutFrom });
-  const [spring, api]   = useSpring(() => ({ y: 0 }));
+  const [spring, api]  = useSpring(() => ({ y: 0 }));
 
   useEffect(() => {
     if (firstMount.current) {
@@ -48,16 +57,18 @@ export default function ExpScene({
         position={[0,0,150]} zoom={1}
       />
 
-      <a.group position-y={spring.y}>
-        {data.items.map(item => {
-          const [x=0,y=0] = data.layout[item.svgPath] || [];
-          return (
-            <group key={item.svgPath} position={[x, y, 0]}>
-              <ExpFloatLogo {...item} />
-            </group>
-          );
-        })}
-      </a.group>
+      <Suspense fallback={null}>
+        <a.group position-y={spring.y}>
+          {data.items.map(item => {
+            const [x = 0, y = 0] = data.layout[item.svgPath] || [];
+            return (
+              <group key={item.svgPath} position={[x, y, 0]}>
+                <ExpFloatLogo {...item} />
+              </group>
+            );
+          })}
+        </a.group>
+      </Suspense>
     </>
   );
 }

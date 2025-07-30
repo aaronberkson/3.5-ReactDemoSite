@@ -1,3 +1,4 @@
+// src/components/SkillsCanvas.jsx
 import React, { Suspense, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Preload } from "@react-three/drei";
@@ -66,6 +67,7 @@ export default function SkillsCanvas({ width = 1, height = 1, onReady }) {
       >
         <Suspense fallback={null}>
           <SkillsScene width={safeWidth} height={safeHeight} />
+          {/* This forces GPU‐side shader & material compilation up front */}
           <Preload all />
           {onReady && <CallOnReady onReady={onReady} />}
         </Suspense>
