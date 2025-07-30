@@ -1,23 +1,24 @@
 // src/components/ForegroundContent.jsx
-import React, { Suspense, useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import NavLogoText from "./NavLogoText";
-import NavIconsDesktop from "./NavIconsDesktop";
-import NavIconsMobile from "./NavIconsMobile";
-import FeedbackBubble from "./FeedbackBubble";
-import Experience from "./Experience";
-import Skills from "./Skills";
-import DemoCards from "./DemoCards";
-import About from "./About";
-import useCurrentSection from "../hooks/useCurrentSection";
-import { ABOUT_SECTION_ACTIVE } from "../config/featureFlags";
+import React, { Suspense, useState, useEffect } from "react";
+import { motion }                     from "framer-motion";
+import NavLogoText                    from "./NavLogoText";
+import NavIconsDesktop                from "./NavIconsDesktop";
+import NavIconsMobile                 from "./NavIconsMobile";
+import FeedbackBubble                 from "./FeedbackBubble";
+import Experience                     from "./Experience";
+import Skills                         from "./Skills";
+import DemoCards                      from "./DemoCards";
+import About                          from "./About";
+import { ABOUT_SECTION_ACTIVE }       from "../config/featureFlags";
 import "./ForegroundContent.css";
 
 const MOBILE_BREAKPOINT = 768;
 
 export default function ForegroundContent({ startAnimation }) {
-  const section = useCurrentSection();
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= MOBILE_BREAKPOINT);
+  const [section, setSection] = useState("demos");
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== 'undefined' && window.innerWidth <= MOBILE_BREAKPOINT
+  );
 
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT);
@@ -28,9 +29,10 @@ export default function ForegroundContent({ startAnimation }) {
   return (
     <div className="fc-root">
       <div className="fc-topnav">
-        <NavLogoText section={section} setSection={() => {}} />
+        <NavLogoText section={section} setSection={setSection} />
         {isMobile ? <NavIconsMobile /> : <NavIconsDesktop />}
       </div>
+
       <div className="canvas-container" style={{ position: 'relative', flex: 1 }}>
         {/* DemoCards as static UI */}
         <motion.div
