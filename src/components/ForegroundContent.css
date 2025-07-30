@@ -1,0 +1,53 @@
+/* root wrapper */
+.fc-root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;           /* fill viewport */
+}
+
+/* topnav: logo + icons */
+.fc-topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 64px;            /* adjust to your actual header height */
+  background: transparent; /* or your nav BG */
+}
+
+/* NavSections sits immediately below .fc-topnav */
+.nav-sections {
+  position: sticky;
+  top: 64px;               /* stick right below topnav */
+  z-index: 9;
+  background: transparent;
+}
+
+/* main content area */
+.fc-page-container {
+  flex: 1;
+  position: relative;
+  overflow: visible;       /* allow your cards to tilt out of bounds */
+  margin-top: calc(64px + 48px);
+    /* 64px = .fc-topnav height
+       48px = approximate NavSections height */
+}
+
+/* the sliding page */
+.fc-page-slide {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* ensure cards grid won't clip overflow */
+.cards-grid {
+  overflow: visible !important;
+}

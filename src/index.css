@@ -1,0 +1,264 @@
+/* index.css */
+
+
+
+/* ---------------------------------------------------
+   Import Fonts
+--------------------------------------------------- */
+@import './assets/fonts/Archivo-Black-Web.css';
+@import './assets/fonts/Focal-Black-Web.css';
+@import './assets/fonts/Focal-BlackItalic-Web.css';
+@import './assets/fonts/Focal-Bold-Web.css';
+@import './assets/fonts/Focal-BoldItalic-Web.css';
+@import './assets/fonts/Focal-Extrabold-Web.css';
+@import './assets/fonts/Focal-ExtraboldItalic-Web.css';
+@import './assets/fonts/Focal-Light-Web.css';
+@import './assets/fonts/Focal-LightItalic-Web.css';
+@import './assets/fonts/Focal-Medium-Web.css';
+@import './assets/fonts/Focal-MediumItalic-Web.css';
+@import './assets/fonts/Focal-Regular-Web.css';
+@import './assets/fonts/Focal-RegularItalic-Web.css';
+@import './assets/fonts/LyonDisplay-Black-Web.css';
+@import './assets/fonts/LyonDisplay-BlackItalic-Web.css';
+@import './assets/fonts/LyonDisplay-Bold-Web.css';
+@import './assets/fonts/LyonDisplay-BoldItalic-Web.css';
+@import './assets/fonts/LyonDisplay-Light-Web.css';
+@import './assets/fonts/LyonDisplay-LightItalic-Web.css';
+@import './assets/fonts/LyonDisplay-Medium-Web.css';
+@import './assets/fonts/LyonDisplay-MediumItalic-Web.css';
+@import './assets/fonts/LyonDisplay-Regular-Web.css';
+@import './assets/fonts/LyonDisplay-RegularItalic-Web.css';
+
+/* --- Doto Font Family --- */
+@import './assets/fonts/Doto-Thin-Web.css';
+@import './assets/fonts/Doto-ExtraLight-Web.css';
+@import './assets/fonts/Doto-Light-Web.css';
+@import './assets/fonts/Doto-Regular-Web.css';
+@import './assets/fonts/Doto-Medium-Web.css';
+@import './assets/fonts/Doto-SemiBold-Web.css';
+@import './assets/fonts/Doto-Bold-Web.css';
+@import './assets/fonts/Doto-ExtraBold-Web.css';
+@import './assets/fonts/Doto-Black-Web.css';
+
+
+/* kill the bounce on any overscroll anywhere */
+/* html, body {
+  overscroll-behavior: none;
+} */
+
+/* ---------------------------------------------------
+   Global Styles and Resets
+--------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------
+   Global CSS Variables for Colors, Fonts, and Spacing
+--------------------------------------------------- */
+:root {
+  /* Color Palette */
+  --color-electric-blue: #007ACD;
+  --color-midnight-navy: #00132F;
+  --color-bright-cyan: #00E5FF;
+  --color-white: #FFFFFF;
+  --color-royal-blue: #0050A0;
+  --color-steel-gray: #A0A4B8;
+  --color-graphite-black: #1C1C1C;
+  --color-cloud-silver: #E6E6E6;
+  --color-aquamarine: #7FFFD4;
+  --color-gold: #FFD700;
+  --color-ruby-red: #E0115F;
+  --color-vivid-teal: #008C8C;
+  --color-neon-yellow: #FFFF00;
+  --color-bright-orange: #FF7F00;
+  --color-slate-blue: #6A5ACD;
+  --color-bold-cyan: #00D4FF;
+  --color-muted-cyan: #009FB3;
+  --color-soft-cyan: #A7EFFF;
+  --color-teal-cyan: #007A99;
+  --color-subtle-purple: #6A5ACD;
+  --color-deep-purple: #210A46;
+  --color-midnight-purple: #160E30;
+  --color-darker-midnight-purple: #0D071A;
+  --card-color-aquamarine: #7FFFD4;
+  --card-color-vivid-teal: #008C8C;
+  --card-color-bright-cyan: #00E5FF;
+  --card-color-royal-indigo: #352A68;
+  --card-color-steel-violet: #514B82;
+  --card-color-teal-plum: #415362;
+
+  /* Font Family Variables */
+  --font-archivo-black: 'Archivo-Black-Web', sans-serif;
+  --font-focal-black: 'Focal-Black-Web', sans-serif;
+  --font-focal-black-italic: 'Focal-BlackItalic-Web', sans-serif;
+  --font-focal-bold: 'Focal-Bold-Web', sans-serif;
+  --font-focal-bold-italic: 'Focal-BoldItalic-Web', sans-serif;
+  --font-focal-extrabold: 'Focal-Extrabold-Web', sans-serif;
+  --font-focal-extrabold-italic: 'Focal-ExtraboldItalic-Web', sans-serif;
+  --font-focal-light: 'Focal-Light-Web', sans-serif;
+  --font-focal-light-italic: 'Focal-LightItalic-Web', sans-serif;
+  --font-focal-medium: 'Focal-Medium-Web', sans-serif;
+  --font-focal-medium-italic: 'Focal-MediumItalic-Web', sans-serif;
+  --font-focal-regular: 'Focal-Regular-Web', sans-serif;
+  --font-focal-regular-italic: 'Focal-RegularItalic-Web', sans-serif;
+  --font-lyon-black: 'LyonDisplay-Black-Web', serif;
+  --font-lyon-black-italic: 'LyonDisplay-BlackItalic-Web', serif;
+  --font-lyon-bold: 'LyonDisplay-Bold-Web', serif;
+  --font-lyon-bold-italic: 'LyonDisplay-BoldItalic-Web', serif;
+  --font-lyon-light: 'LyonDisplay-Light-Web', serif;
+  --font-lyon-light-italic: 'LyonDisplay-LightItalic-Web', serif;
+  --font-lyon-medium: 'LyonDisplay-Medium-Web', serif;
+  --font-lyon-medium-italic: 'LyonDisplay-MediumItalic-Web', serif;
+  --font-lyon-regular: 'LyonDisplay-Regular-Web', serif;
+  --font-lyon-regular-italic: 'LyonDisplay-RegularItalic-Web', serif;
+  --font-doto: 'Doto', sans-serif;
+
+  /* Global Container Horizontal Padding */
+  --container-padding-x: 16px;
+
+  /* Navbar-specific values */
+  --navbar-vertical-padding: 10px;
+  --navbar-min-height: 130px;
+
+  /* Breakpoints */
+  --desktop-max-width: 1280px;
+  --mobile-breakpoint: 768px;
+}
+
+
+/* ---------------------------------------------------
+   Media Queries for Container Padding
+--------------------------------------------------- */
+@media (min-width: 320px) {
+  :root {
+    --container-padding-x: 20px;
+  }
+}
+@media (min-width: 438px) {
+  :root {
+    --container-padding-x: 22px;
+  }
+}
+@media (min-width: 480px) {
+  :root {
+    --container-padding-x: 24px;
+  }
+}
+@media (min-width: 640px) {
+  :root {
+    --container-padding-x: 28px;
+  }
+}
+@media (min-width: 768px) {
+  :root {
+    --container-padding-x: 32px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --container-padding-x: 41px;
+  }
+}
+
+/* ---------------------------------------------------
+   Global Container for Centered Content
+--------------------------------------------------- */
+.app-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
+}
+
+/* ---------------------------------------------------
+   Global Body Styling
+--------------------------------------------------- */
+body {
+  font-family: var(--font-focal-regular);
+  background-color: var(--color-midnight-purple);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------------------------------------------------
+   General Typography
+--------------------------------------------------- */
+h1 {
+  font-family: var(--font-focal-bold);
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: var(--font-focal-medium);
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+p {
+  font-family: var(--font-focal-regular);
+  font-size: 1em;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 800px;
+}
+
+
+
+/* ---------------------------------------------------
+   Cards
+--------------------------------------------------- */
+.cards-container {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-top: 0px;
+}
+
+.card {
+  height: 565px;
+  width: calc(33.333% - 20px);
+  margin: 10px;
+  padding: 25px;
+  text-align: center;
+  border-radius: 8px;
+  color: var(--color-white);
+}
+
+/* ---------------------------------------------------
+   Global Button & Typography Styles for Cards
+--------------------------------------------------- */
+.Btn-ViewDemo {
+  font-family: var(--font-focal-regular);
+  font-size: 1em;
+  color: var(--color-white);
+}
+.Btn-YouTubeWalkThru {
+  font-family: var(--font-focal-bold);
+  font-size: 1em;
+  color: var(--color-white);
+}
+.Btn-GitHub {
+  font-family: var(--font-focal-regular);
+  font-size: 1em;
+  color: var(--color-white);
+}
+.card-title {
+  font-family: var(--font-focal-bold);
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.card-subtitle {
+  font-family: var(--font-lyon-regular);
+  font-size: 1.2em;
+  text-align: center;
+  white-space: nowrap;
+}

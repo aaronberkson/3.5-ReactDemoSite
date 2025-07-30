@@ -1,0 +1,391 @@
+/*
+        This font software is the property of Commercial Type.
+
+        You may not modify the font software, use it on another website, or install it on a computer.
+
+        License information is available at http://commercialtype.com/eula
+        For more information please visit Commercial Type at http://commercialtype.com or email us at info[at]commercialtype.com
+
+        Copyright (C) 2025 Schwartzco Inc.
+        License 2504-ZIUJXF      
+*/
+
+@font-face {
+	font-family: 'Lyon Display Web';
+	src: url('LyonDisplay-MediumItalic-Web.woff2') format('woff2'),
+		 url('LyonDisplay-MediumItalic-Web.woff') format('woff');
+	font-weight: 500;
+	font-style: italic;
+	}
+
+.LyonDisplay-MediumItalic-Web {
+	font-family: 'Lyon Display Web';
+	font-weight: 500;
+	font-style: italic;
+	}
+@font-face {
+	font-family: 'Lyon Display Web';
+	src: url('LyonDisplay-Light-Web.woff2') format('woff2'),
+		 url('LyonDisplay-Light-Web.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	}
+
+.LyonDisplay-Light-Web {
+	font-family: 'Lyon Display Web';
+	font-weight: 300;
+	font-style: normal;
+	}
+@font-face {
+	font-family: 'Lyon Display Web';
+	src: url('LyonDisplay-Bold-Web.woff2') format('woff2'),
+		 url('LyonDisplay-Bold-Web.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	}
+
+.LyonDisplay-Bold-Web {
+	font-family: 'Lyon Display Web';
+	font-weight: 700;
+	font-style: normal;
+	}
+@font-face {
+	font-family: 'Lyon Display Web';
+	src: url('LyonDisplay-RegularItalic-Web.woff2') format('woff2'),
+		 url('LyonDisplay-RegularItalic-Web.woff') format('woff');
+	font-weight: 400;
+	font-style: italic;
+	}
+
+.LyonDisplay-RegularItalic-Web {
+	font-family: 'Lyon Display Web';
+	font-weight: 400;
+	font-style: italic;
+	}
+@font-face {
+	font-family: 'Lyon Display Web';
+	src: url('LyonDisplay-LightItalic-Web.woff2') format('woff2'),
+		 url('LyonDisplay-LightItalic-Web.woff') format('woff');
+	font-weight: 300;
+	font-style: italic;
+	}
+
+.LyonDisplay-LightItalic-Web {
+	font-family: 'Lyon Display Web';
+	font-weight: 300;
+	font-style: italic;
+	}
+@font-face {
+	font-family: 'Lyon Display Web';
+	src: url('LyonDisplay-Black-Web.woff2') format('woff2'),
+		 url('LyonDisplay-Black-Web.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+	}
+
+.LyonDisplay-Black-Web {
+	font-family: 'Lyon Display Web';
+	font-weight: 900;
+	font-style: normal;
+	}
+@font-face {
+	font-family: 'Lyon Display Web';
+	src: url('LyonDisplay-BoldItalic-Web.woff2') format('woff2'),
+		 url('LyonDisplay-BoldItalic-Web.woff') format('woff');
+	font-weight: 700;
+	font-style: italic;
+	}
+
+.LyonDisplay-BoldItalic-Web {
+	font-family: 'Lyon Display Web';
+	font-weight: 700;
+	font-style: italic;
+	}
+@font-face {
+	font-family: 'Lyon Display Web';
+	src: url('LyonDisplay-Medium-Web.woff2') format('woff2'),
+		 url('LyonDisplay-Medium-Web.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	}
+
+.LyonDisplay-Medium-Web {
+	font-family: 'Lyon Display Web';
+	font-weight: 500;
+	font-style: normal;
+	}
+@font-face {
+	font-family: 'Lyon Display Web';
+	src: url('LyonDisplay-Regular-Web.woff2') format('woff2'),
+		 url('LyonDisplay-Regular-Web.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	}
+
+.LyonDisplay-Regular-Web {
+	font-family: 'Lyon Display Web';
+	font-weight: 400;
+	font-style: normal;
+	}
+@font-face {
+	font-family: 'Lyon Display Web';
+	src: url('LyonDisplay-BlackItalic-Web.woff2') format('woff2'),
+		 url('LyonDisplay-BlackItalic-Web.woff') format('woff');
+	font-weight: 900;
+	font-style: italic;
+	}
+
+.LyonDisplay-BlackItalic-Web {
+	font-family: 'Lyon Display Web';
+	font-weight: 900;
+	font-style: italic;
+	}
+@font-face {
+	font-family: 'Focal Web';
+	src: url('Focal-Light-Web.woff2') format('woff2'),
+		 url('Focal-Light-Web.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	}
+
+.Focal-Light-Web {
+	font-family: 'Focal Web';
+	font-weight: 300;
+	font-style: normal;
+	}
+@font-face {
+	font-family: 'Focal Web';
+	src: url('Focal-LightItalic-Web.woff2') format('woff2'),
+		 url('Focal-LightItalic-Web.woff') format('woff');
+	font-weight: 300;
+	font-style: italic;
+	}
+
+.Focal-LightItalic-Web {
+	font-family: 'Focal Web';
+	font-weight: 300;
+	font-style: italic;
+	}
+@font-face {
+	font-family: 'Focal Web';
+	src: url('Focal-Regular-Web.woff2') format('woff2'),
+		 url('Focal-Regular-Web.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	}
+
+.Focal-Regular-Web {
+	font-family: 'Focal Web';
+	font-weight: 400;
+	font-style: normal;
+	}
+@font-face {
+	font-family: 'Focal Web';
+	src: url('Focal-MediumItalic-Web.woff2') format('woff2'),
+		 url('Focal-MediumItalic-Web.woff') format('woff');
+	font-weight: 500;
+	font-style: italic;
+	}
+
+.Focal-MediumItalic-Web {
+	font-family: 'Focal Web';
+	font-weight: 500;
+	font-style: italic;
+	}
+@font-face {
+	font-family: 'Focal Web';
+	src: url('Focal-Bold-Web.woff2') format('woff2'),
+		 url('Focal-Bold-Web.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	}
+
+.Focal-Bold-Web {
+	font-family: 'Focal Web';
+	font-weight: 700;
+	font-style: normal;
+	}
+@font-face {
+	font-family: 'Focal Web';
+	src: url('Focal-ExtraboldItalic-Web.woff2') format('woff2'),
+		 url('Focal-ExtraboldItalic-Web.woff') format('woff');
+	font-weight: 800;
+	font-style: italic;
+	}
+
+.Focal-ExtraboldItalic-Web {
+	font-family: 'Focal Web';
+	font-weight: 800;
+	font-style: italic;
+	}
+@font-face {
+	font-family: 'Focal Web';
+	src: url('Focal-BlackItalic-Web.woff2') format('woff2'),
+		 url('Focal-BlackItalic-Web.woff') format('woff');
+	font-weight: 900;
+	font-style: italic;
+	}
+
+.Focal-BlackItalic-Web {
+	font-family: 'Focal Web';
+	font-weight: 900;
+	font-style: italic;
+	}
+@font-face {
+	font-family: 'Focal Web';
+	src: url('Focal-Medium-Web.woff2') format('woff2'),
+		 url('Focal-Medium-Web.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	}
+
+.Focal-Medium-Web {
+	font-family: 'Focal Web';
+	font-weight: 500;
+	font-style: normal;
+	}
+@font-face {
+	font-family: 'Focal Web';
+	src: url('Focal-Extrabold-Web.woff2') format('woff2'),
+		 url('Focal-Extrabold-Web.woff') format('woff');
+	font-weight: 800;
+	font-style: normal;
+	}
+
+.Focal-Extrabold-Web {
+	font-family: 'Focal Web';
+	font-weight: 800;
+	font-style: normal;
+	}
+@font-face {
+	font-family: 'Focal Web';
+	src: url('Focal-Black-Web.woff2') format('woff2'),
+		 url('Focal-Black-Web.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+	}
+
+.Focal-Black-Web {
+	font-family: 'Focal Web';
+	font-weight: 900;
+	font-style: normal;
+	}
+@font-face {
+	font-family: 'Focal Web';
+	src: url('Focal-BoldItalic-Web.woff2') format('woff2'),
+		 url('Focal-BoldItalic-Web.woff') format('woff');
+	font-weight: 700;
+	font-style: italic;
+	}
+
+.Focal-BoldItalic-Web {
+	font-family: 'Focal Web';
+	font-weight: 700;
+	font-style: italic;
+	}
+@font-face {
+	font-family: 'Focal Web';
+	src: url('Focal-RegularItalic-Web.woff2') format('woff2'),
+		 url('Focal-RegularItalic-Web.woff') format('woff');
+	font-weight: 400;
+	font-style: italic;
+	}
+
+.Focal-RegularItalic-Web {
+	font-family: 'Focal Web';
+	font-weight: 400;
+	font-style: italic;
+	}
+
+/* --- Doto Font Family --- 
+   Weight assignments:
+     Thin: 100
+     ExtraLight: 200
+     Light: 300
+     Regular: 400
+     Medium: 500
+     SemiBold: 600
+     Bold: 700
+     ExtraBold: 800
+     Black: 900
+*/
+@font-face {
+  font-family: 'Doto';
+  src: url('./Doto-Thin.woff2') format('woff2'),
+       url('./Doto-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doto';
+  src: url('./Doto-ExtraLight.woff2') format('woff2'),
+       url('./Doto-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doto';
+  src: url('./Doto-Light.woff2') format('woff2'),
+       url('./Doto-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doto';
+  src: url('./Doto-Regular.woff2') format('woff2'),
+       url('./Doto-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doto';
+  src: url('./Doto-Medium.woff2') format('woff2'),
+       url('./Doto-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doto';
+  src: url('./Doto-SemiBold.woff2') format('woff2'),
+       url('./Doto-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doto';
+  src: url('./Doto-Bold.woff2') format('woff2'),
+       url('./Doto-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doto';
+  src: url('./Doto-ExtraBold.woff2') format('woff2'),
+       url('./Doto-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doto';
+  src: url('./Doto-Black.woff2') format('woff2'),
+       url('./Doto-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}

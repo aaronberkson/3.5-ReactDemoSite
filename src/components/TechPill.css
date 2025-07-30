@@ -1,0 +1,106 @@
+/* TechPill.css */
+
+/* 
+  Wrapper for each tech pill – provides positioning context.
+  Ensuring this has a stacking context so tooltips are controlled correctly.
+*/
+.tech-pill-wrapper {
+  display: inline-block;
+  position: relative;
+  overflow: visible;
+  transform-style: preserve-3d;
+  z-index: 10; /* Ensures pills appear above general content */
+}
+
+/* Base styles for the pill container */
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-family: var(--font-focal-regular, sans-serif);
+  font-size: 11px;
+  color: white;
+  white-space: nowrap;
+  user-select: none;
+  flex-shrink: 0;
+  overflow: visible;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: auto;
+}
+
+/* Tooltip styles */
+.tech-tooltip {
+  position: absolute;
+  z-index: 100; /* Ensures tooltips appear above TrainSmoke */
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-align: left;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Tooltip arrow */
+.tech-tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent rgba(0, 0, 0, 0.85) transparent;
+}
+
+/* Container for the icon */
+.tech-pill-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  overflow: visible;
+}
+
+/* Tech-specific gradient classes */
+.tech-pill--mongo {
+  background: linear-gradient(135deg, #4DB33D 0%, #2D6E2E 100%);
+  --tech-gradient: linear-gradient(135deg, #4DB33D 0%, #2D6E2E 100%);
+}
+
+.tech-pill--express {
+  background: linear-gradient(135deg, #CCCCCC 0%, #888888 50%, #777777 100%);
+  --tech-gradient: linear-gradient(135deg, #CCCCCC 0%, #888888 50%, #777777 100%);
+}
+
+.tech-pill--react {
+  background: linear-gradient(135deg, #00EAFF 0%, #00AEDF 50%, #0077B0 100%);
+  --tech-gradient: linear-gradient(135deg, #00EAFF 0%, #00AEDF 50%, #0077B0 100%);
+}
+
+.tech-pill--node {
+  background: linear-gradient(135deg, #3C873A 0%, #1B4D2A 100%);
+  --tech-gradient: linear-gradient(135deg, #3C873A 0%, #1B4D2A 100%);
+}
+
+.tech-pill--strapi {
+  background: linear-gradient(135deg, #1C1C4E 0%, #4945FF 100%);
+  --tech-gradient: linear-gradient(135deg, #1C1C4E 0%, #4945FF 100%);
+}
+
+.tech-pill--stripe {
+  background: linear-gradient(135deg, #0B162A 0%, #09203F 50%, #1E3A5F 100%);
+  --tech-gradient: linear-gradient(135deg, #0B162A 0%, #09203F 50%, #1E3A5F 100%);
+}
+
+.tech-pill--apollo {
+  background: linear-gradient(135deg, #e36f30 0%, #8e380a 100%);
+  --tech-gradient: linear-gradient(135deg, #e36f30 0%, #8e380a 100%);
+}
+
+.tech-pill--graphql {
+  background: linear-gradient(135deg, #B42E7D 0%, #611044 100%);
+  --tech-gradient: linear-gradient(135deg, #B42E7D 0%, #611044 100%);
+}

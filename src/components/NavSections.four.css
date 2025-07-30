@@ -1,0 +1,91 @@
+/* NavSections.four.css - FINAL TUNED VERSION */
+
+/* 1) Very large desktop (>=1281px) */
+.nav-sections.four {
+  gap: 12px;
+  font-size: 34px;
+}
+
+/* 1.5) Mid desktop (1180px–1280px) */
+@media screen and (min-width: 1180px) and (max-width: 1280px) {
+  .nav-sections.four {
+    gap: 12px;
+    font-size: 34px;
+  }
+}
+
+/* 2) Upper mid-range (1025px–1179px) */
+@media screen and (min-width: 1025px) and (max-width: 1179px) {
+  .nav-sections.four {
+    gap: clamp(9px, calc((100vw - 1025px) * (3 / 154) + 9px), 12px);
+    font-size: clamp(30px, calc((100vw - 1025px) * (4 / 154) + 30px), 34px);
+  }
+}
+
+/* 3) Lower mid-range (901px–1024px) */
+@media screen and (min-width: 901px) and (max-width: 1024px) {
+  .nav-sections.four {
+    gap: clamp(6px, calc((100vw - 901px) * (2 / 123) + 6px), 8px);
+    font-size: clamp(26px, calc((100vw - 901px) * (4 / 123) + 26px), 30px);
+  }
+}
+
+/* 4) Tablet (769px–900px) */
+@media screen and (min-width: 769px) and (max-width: 900px) {
+  .nav-sections.four {
+    gap: clamp(3px, calc((100vw - 769px) * (2 / 131) + 3px), 5px);
+    font-size: clamp(22px, calc((100vw - 769px) * (3 / 131) + 22px), 25px);
+  }
+}
+
+/* 5) Mobile high (667px–768px) */
+@media screen and (min-width: 667px) and (max-width: 768px) {
+  .nav-sections.four {
+    gap: clamp(2px, calc((100vw - 667px) * (1 / 101) + 2px), 4px);
+    font-size: clamp(18px, calc((100vw - 667px) * (2 / 101) + 18px), 20px);
+  }
+}
+
+/* 6) Mobile mid (501px–666px) */
+@media screen and (min-width: 501px) and (max-width: 666px) {
+  .nav-sections.four {
+    gap: clamp(1px, calc((100vw - 501px) * (1 / 165) + 1px), 3px);
+    font-size: clamp(16px, calc((100vw - 501px) * (2 / 165) + 16px), 18px);
+  }
+}
+
+/* 7) Mobile low (437px–500px) */
+@media screen and (min-width: 437px) and (max-width: 500px) {
+  .nav-sections.four {
+    gap: clamp(1px, calc((100vw - 437px) * (1 / 63) + 1px), 2px);
+    font-size: clamp(15px, calc((100vw - 437px) * (2 / 63) + 15px), 17px);
+  }
+}
+
+/* NavSections.four.css */
+
+/* 8) Mobile narrow (<=436px) */
+@media screen and (max-width: 436px) {
+  .nav-sections.four {
+    gap: clamp(3px, calc((100vw - 320px) * (2 / 116) + 3px), 8px);
+    font-size: clamp(15px, calc((100vw - 320px) * (9 / 116) + 15px), 24px);
+  }
+
+  .nav-item {
+    font-size: inherit;
+    line-height: 1;
+  }
+
+  .nav-item .item-main,
+  .nav-item .item-main::before,
+  .nav-item .item-shadow {
+    line-height: 1;
+    display: inline-block;
+    vertical-align: baseline;
+  }
+
+  .nav-sections-underline,
+  .nav-sections-underline-shadow {
+    bottom: -10px;
+  }
+}

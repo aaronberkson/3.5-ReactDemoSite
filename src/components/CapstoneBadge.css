@@ -1,0 +1,120 @@
+/* --- Global Constants for Capstone Badge --- */
+:root {
+  /* Blue Triangle Background (Cap) */
+  --blue-bg-size: 75px;             /* Overall size of the blue triangle background */
+  --blue-bg-corner-radius: 8px;       /* Fixed corner radius for the blue triangle */
+  --cap-bg-offset-x: 0px;             /* Horizontal offset (from card's right) */
+  --cap-bg-offset-y: 0px;             /* Vertical offset (from card's top) */
+
+  /* Graduate Cap Properties */
+  --grad-cap-size: 28px;              /* Width & height of the grad cap image */
+  --grad-cap-offset-x: 58px;           /* X offset inside the blue cap */
+  --grad-cap-offset-y: 17px;           /* Y offset inside the blue cap */
+
+  /* Ribbon Properties */
+  --capstone-ribbon-size: 350px;      /* Overall width of the ribbon asset */
+  /* Height is derived from a 3:1 aspect ratio */
+  --capstone-ribbon-offset-x: -121.5px; /* Horizontal nudge for the ribbon */
+  --capstone-ribbon-offset-y: -7px;   /* Vertical nudge for the ribbon */
+
+  /* Ribbon Text Properties */
+  --ribbon-text-font-size: 12px;       /* Font size of the overlay text */
+  --ribbon-text-offset-x: 0px;         /* Additional horizontal offset for text */
+  --ribbon-text-offset-y: -28px;       /* Additional vertical offset for text */
+  --ribbon-text-rotate-angle: 40deg;   /* Rotation angle for the text overlay */
+}
+
+/* --- Overall Badge Container --- */
+.capstone-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140px;   /* This area defines where the badge sits on the card */
+  height: 140px;
+  pointer-events: none;
+  background-color: transparent;
+}
+
+/* --- Blue Triangle Background (Cap Container) --- */
+.cap-container {
+  position: absolute;
+  top: var(--cap-bg-offset-y);
+  right: var(--cap-bg-offset-x);
+  width: var(--blue-bg-size);
+  height: var(--blue-bg-size);
+  z-index: 2;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.cap-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* --- Graduate Cap Image --- */
+.graduate-cap {
+  position: absolute;
+  left: var(--grad-cap-offset-x);
+  top: var(--grad-cap-offset-y);
+  transform: translate(-50%, -50%);
+  width: var(--grad-cap-size);
+  height: var(--grad-cap-size);
+  z-index: 3;
+}
+
+/* --- Ribbon Container --- */
+/* The height is calculated using a fixed 3:1 aspect ratio. */
+.ribbon-container {
+  position: absolute;
+  top: var(--capstone-ribbon-offset-y);
+  right: var(--capstone-ribbon-offset-x);
+  width: var(--capstone-ribbon-size);
+  height: calc(var(--capstone-ribbon-size) / 3);
+  z-index: 4;
+  overflow: visible;
+  background-color: transparent;
+}
+
+/* --- Ribbon Image --- */
+/* Using PNG means the drop shadow is baked in, so no extra CSS filters are necessary. */
+.ribbon-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  background-color: transparent;
+}
+
+/* --- Text Overlay on the Ribbon --- */
+/* The overlay rotation now uses a dedicated variable so you can manually adjust the angle. */
+.ribbon-text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(var(--ribbon-text-rotate-angle))
+             translate(var(--ribbon-text-offset-x), var(--ribbon-text-offset-y));
+  transform-origin: center;
+}
+
+/* --- Ribbon Text Styling --- */
+.ribbon-text {
+  font-size: var(--ribbon-text-font-size);
+  color: #0d1e3a;
+}
+
+/* Using your global font constants */
+.mit-text {
+  font-family: var(--font-focal-black);
+}
+.capstone-text {
+  font-family: var(--font-focal-extrabold);
+  text-transform: capitalize;
+}

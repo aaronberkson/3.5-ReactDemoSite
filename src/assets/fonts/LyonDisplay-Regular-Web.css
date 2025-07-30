@@ -1,0 +1,13 @@
+@font-face {
+	font-family: 'LyonDisplay-Regular-Web';
+	src: url('LyonDisplay-Regular-Web.woff2') format('woff2'),
+		 url('LyonDisplay-Regular-Web.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	}
+
+.LyonDisplay-Regular-Web {
+	font-family: 'LyonDisplay-Regular-Web';
+	font-weight: 400;
+	font-style: normal;
+	}

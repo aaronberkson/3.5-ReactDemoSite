@@ -1,0 +1,36 @@
+/* Preloader overlay & centering */
+.preloader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #160E30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  overflow: hidden;
+}
+
+/* Container for spinner + gear */
+.preloader-center {
+  position: relative;
+}
+
+/* Rotate keyframe */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Outer ring spinner */
+.preloader-spinner {
+  animation: spin 1.2s linear infinite;
+  will-change: transform;
+}
+
+/* Inner gear */
+.preloader-gear {
+  animation: spin 6s linear infinite;
+  will-change: transform;
+}

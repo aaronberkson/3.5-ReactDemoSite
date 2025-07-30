@@ -1,0 +1,13 @@
+@font-face {
+	font-family: 'LyonDisplay-Medium-Web';
+	src: url('LyonDisplay-Medium-Web.woff2') format('woff2'),
+		 url('LyonDisplay-Medium-Web.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	}
+
+.LyonDisplay-Medium-Web {
+	font-family: 'LyonDisplay-Medium-Web';
+	font-weight: 500;
+	font-style: normal;
+	}

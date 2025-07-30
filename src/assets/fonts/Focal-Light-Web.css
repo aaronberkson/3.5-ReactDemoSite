@@ -1,0 +1,13 @@
+@font-face {
+	font-family: 'Focal-Light-Web';
+	src: url('Focal-Light-Web.woff2') format('woff2'),
+		 url('Focal-Light-Web.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	}
+
+.Focal-Light-Web {
+	font-family: 'Focal-Light-Web';
+	font-weight: 300;
+	font-style: normal;
+	}

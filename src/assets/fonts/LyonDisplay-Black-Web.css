@@ -1,0 +1,13 @@
+@font-face {
+	font-family: 'LyonDisplay-Black-Web';
+	src: url('LyonDisplay-Black-Web.woff2') format('woff2'),
+		 url('LyonDisplay-Black-Web.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+	}
+
+.LyonDisplay-Black-Web {
+	font-family: 'LyonDisplay-Black-Web';
+	font-weight: 900;
+	font-style: normal;
+	}

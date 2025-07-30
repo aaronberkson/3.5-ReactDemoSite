@@ -1,0 +1,279 @@
+/* ========= CSS Constants ========= */
+:root {
+  --menu-border-thickness: 2px;
+  --menu-border-color: #7ad2f7;
+  --menu-background-color: #2c3e50;
+  --menu-border-radius: 8px;
+  --menu-padding: 5px;         /* Inner padding for burger container */
+  --dropdown-x-offset: 2px;      /* Horizontal offset for the dropdown */
+  --hamburger-hover-box-shadow: 0px 0px 15px 5px rgba(122,210,247,0.75);
+  --hamburger-tap-box-shadow: 0px 0px 8px 3px rgba(122,210,247,0.5);
+  /* The following are already defined in index.css,
+     for example: --color-deep-purple: #210A46; */
+}
+
+/* ========= Base Navbar Styles ========= */
+
+.navbar-wrapper {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background-color: var(--color-deep-purple);
+  box-shadow: 0 6px 15px rgba(106, 90, 205, 0.7);
+  top: 0;
+  z-index: 1000; /* Adjusted to ensure the navbar stays above all other content */
+}
+
+/* Updated so that horizontal padding comes solely from the app-wide gutter */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px var(--app-wide-gutter);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1200px) {
+  .navbar-container {
+    padding-left: var(--app-wide-gutter);
+    padding-right: var(--app-wide-gutter);
+  }
+}
+
+/* ========= Logo Styles ========= */
+.navbar-logo {
+  margin-right: 15px;
+  width: 123px; /* Matches LOGO_SIZE */
+  height: 130px;
+}
+
+.navbar-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ========= Navbar Text Containers ========= */
+.navbar-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-text-wrapper {
+  position: relative;
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========= Original Text Styles ========= */
+.NavBar-Ln1 {
+  font-family: var(--font-focal-extrabold);
+  font-size: 48px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.NavBar-Ln2 {
+  font-family: var(--font-focal-medium);
+  font-size: 30.5px;
+  height: 40px;
+  margin-top: -5px;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* ========= Gradient Text Fill Styles ========= */
+.glow-react,
+.glow-email,
+.glow-linkedin,
+.glow-pdf {
+  position: relative; /* Required so the pseudo-element is positioned relative to this element */
+  background: linear-gradient(
+    180deg,
+    #00EAFF 0%,
+    #00C6FF 50%,
+    #008ACF 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-cmu {
+  background: linear-gradient(
+    180deg,
+    #FDB515 0%,  /* Bright Carnegie yellow */
+    #F6782E 50%, /* Bold Carnegie orange */
+    #C41230 100% /* Deep Carnegie red */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* MIT: Lighter-to-darker blue gradient with three stops */
+.glow-mit {
+  background: linear-gradient(
+    180deg,
+    #00EAFF 0%,
+    #00C6FF 50%,
+    #008ACF 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========= Font Family Update for Glow Elements ========= */
+.glow-react,
+.glow-email,
+.glow-linkedin,
+.glow-pdf,
+.glow-cmu,
+.glow-mit {
+  font-family: var(--font-focal-extrabold);
+}
+
+.subtitle {
+  font-family: var(--font-focal-regular);
+}
+
+/* ========= Responsive Navbar Behavior ========= */
+@media (max-width: 1200px) {
+  .navbar-container {
+    padding-left: var(--app-wide-gutter);
+    padding-right: var(--app-wide-gutter);
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Adjusting NavBar text for smaller screen sizes */
+  .NavBar-Ln1 {
+    font-size: 44px;
+  }
+  .NavBar-Ln2 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hamburger menu */
+  .navbar-icons {
+    display: none !important;
+  }
+
+  .hamburger-menu {
+    display: flex !important;
+  }
+
+  /* Adjusting NavBar text for very small screens */
+  .NavBar-Ln1 {
+    font-size: 36px;
+  }
+
+  .NavBar-Ln2 {
+    font-size: 22px;
+  }
+}
+
+/* ========= Hamburger Wrapper & Inner Button Styles ========= */
+.hamburger-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: var(--menu-padding);
+  border: var(--menu-border-thickness) solid transparent;
+  box-sizing: border-box;
+  transform-origin: center;
+}
+
+.hamburger-wrapper.selected {
+  border-color: var(--menu-border-color);
+  background-color: var(--menu-background-color);
+  border-top-left-radius: var(--menu-border-radius);
+  border-top-right-radius: var(--menu-border-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.burger-btn {
+  border: none !important;
+  box-sizing: border-box;
+  transform-origin: center;
+}
+
+.burger-btn.selected {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+/* ========= Mobile Dropdown Overlay Styles ========= */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-right: calc(-1 * var(--dropdown-x-offset));
+  z-index: 1100; /* Adjusted for higher stacking order above navbar */
+  background-color: var(--menu-background-color);
+  padding: 10px;
+  border: var(--menu-border-thickness) solid var(--menu-border-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-top-left-radius: var(--menu-border-radius);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: var(--menu-border-radius);
+  border-bottom-right-radius: var(--menu-border-radius);
+}
+
+/* ========= Icon Container for Navbar Links ========= */
+.nav-icons-desktop {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Space between each icon */
+}
+
+.nav-icons-desktop > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-icons-desktop > div > span {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+@media (max-width: 1024px) {
+  .nav-icons-desktop {
+    gap: 8px; /* Reduced gap for smaller screens */
+  }
+
+  .nav-icons-desktop > div > span {
+    font-size: 10px; /* Adjusted font size */
+  }
+}
+
+/* ========= General Utility Classes ========= */
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.NavbarShadowText * {
+  color: inherit !important;
+}

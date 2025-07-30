@@ -1,0 +1,383 @@
+/* ---------------------------------------------------
+   3D Card Container
+--------------------------------------------------- */
+.demo-card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: box-shadow 0.3s ease;
+  overflow: visible;
+}
+
+/* ---------------------------------------------------
+   New Thin 3D Variations – Darkened Backgrounds & Enhanced Contrast
+--------------------------------------------------- */
+
+/* Desktop Variants */
+.card-thin-3d-primary {
+  background: linear-gradient(145deg, #6F6F6F 0%, #5B5B5B 40%, #444444 100%);
+  border: 2px solid rgba(0,0,0,0.15);
+  border-radius: 8px;
+  /* REVISED: swapped inset offsets to reverse the effect */
+  box-shadow:
+    0 3px 6px rgba(0,0,0,0.35),
+    inset 4px 4px 10px rgba(255,255,255,0.45),
+    inset -4px -4px 8px rgba(0,0,0,0.50);
+  overflow: visible;
+}
+
+.card-thin-3d-secondary {
+  background: linear-gradient(145deg, #5F5F5F 0%, #4E4E4E 40%, #393939 100%);
+  border: 2px solid rgba(0,0,0,0.15);
+  border-radius: 8px;
+  box-shadow:
+    0 3px 6px rgba(0,0,0,0.35),
+    inset 4px 4px 10px rgba(255,255,255,0.45),
+    inset -4px -4px 8px rgba(0,0,0,0.50);
+  overflow: visible;
+}
+
+.card-thin-3d-tertiary {
+  background: linear-gradient(145deg, #4F4F4F 0%, #3F3F3F 40%, #2C2C2C 100%);
+  border: 2px solid rgba(0,0,0,0.15);
+  border-radius: 8px;
+  box-shadow:
+    0 3px 6px rgba(0,0,0,0.35),
+    inset 4px 4px 10px rgba(255,255,255,0.45),
+    inset -4px -4px 8px rgba(0,0,0,0.50);
+  overflow: visible;
+}
+
+/* ---------------------------------------------------
+   Mobile Variants
+   (For mobile cards, the background/shadow style is often simpler.)
+--------------------------------------------------- */
+.card-primary,
+.card-secondary,
+.card-tertiary {
+  /* For mobile, re-use same gradient values as desktop */
+  background: linear-gradient(145deg, #6F6F6F 0%, #5B5B5B 40%, #444444 100%);
+  border: 2px solid rgba(0,0,0,0.15);
+  border-radius: 8px;
+  box-shadow:
+    0 3px 6px rgba(0,0,0,0.35),
+    inset 4px 4px 10px rgba(255,255,255,0.45),
+    inset -4px -4px 8px rgba(0,0,0,0.50);
+  overflow: visible;
+}
+
+/* ---------------------------------------------------
+   Smooth Brushed Metal Overlay Effect (Revised & Darkened)
+--------------------------------------------------- */
+.card-thin-3d-primary,
+.card-thin-3d-secondary,
+.card-thin-3d-tertiary,
+.card-primary,
+.card-secondary,
+.card-tertiary {
+  position: relative;
+}
+
+.card-thin-3d-primary::after,
+.card-thin-3d-secondary::after,
+.card-thin-3d-tertiary::after,
+.card-primary::after,
+.card-secondary::after,
+.card-tertiary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: inherit;
+  /* REVISED: reverse the gradient stops to flip the visual emphasis */
+  background: linear-gradient(145deg, rgba(225,225,225,0.06) 0%, rgba(200,200,200,0.12) 100%);
+  opacity: 0.85;
+  filter: blur(0.2px);
+  transition: opacity 0.3s ease;
+}
+
+.card-thin-3d-primary:hover::after,
+.card-thin-3d-secondary:hover::after,
+.card-thin-3d-tertiary:hover::after,
+.card-primary:hover::after,
+.card-secondary:hover::after,
+.card-tertiary:hover::after {
+  opacity: 1;
+}
+
+/* ---------------------------------------------------
+   Button & Typography Styles (Unified for Desktop & Mobile)
+--------------------------------------------------- */
+.launch-demo-btn {
+  background-color: #0d6efd !important;
+  border-color: #0d6efd !important;
+  transition: all 0.2s ease;
+  box-shadow: none !important;
+}
+
+.launch-demo-btn:hover {
+  background-color: #0b5ed7 !important;
+  border-color: #0b5ed7 !important;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2) !important;
+}
+
+.launch-demo-btn:active {
+  background-color: #0a58ca !important;
+  border-color: #0a58ca !important;
+  box-shadow: inset 0 4px 6px rgba(0,0,0,0.3) !important;
+  transform: translateY(2px);
+}
+
+
+
+.btn-launch {
+  background-color: #0d6efd !important;
+  border-color: #0d6efd !important;
+  color: white !important;
+}
+
+.btn-launch:hover {
+  background-color: #0c63e4 !important;
+  border-color: #0c63e4 !important;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.15) !important;
+}
+
+.btn-launch:active {
+  background-color: #0b5ed7 !important;
+  border-color: #0b5ed7 !important;
+  box-shadow: inset 0 4px 6px rgba(0,0,0,0.25) !important;
+  transform: translateY(2px);
+}
+
+.btn-youtube {
+  background-color: #ff0000 !important;
+  border-color: #ff0000 !important;
+  color: white !important;
+}
+
+.btn-youtube:hover {
+  background-color: #e60000 !important;
+  border-color: #e60000 !important;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.15) !important;
+}
+
+.btn-youtube:active {
+  background-color: #cc0000 !important;
+  border-color: #cc0000 !important;
+  box-shadow: inset 0 4px 6px rgba(0,0,0,0.25) !important;
+  transform: translateY(2px);
+}
+
+/* GitHub Button: Dark Purple Fill with Purple–Blue Gradient Border & Interactive States */
+.btn-github {
+  border: 2px solid transparent;  /* Reserve border space */
+  border-radius: 8px;               /* Curved corners */
+  overflow: hidden;                 /* Clip backgrounds to rounded corners */
+  
+  /* Two background layers:
+     1. Fill layer (padding-box): A diagonal gradient from dark purple (#1C0A2A) at the upper left to black at the lower right.
+     2. Border layer (border-box): The original purple–blue gradient.
+  */
+  background-image: 
+    linear-gradient(to bottom right, #1C0A2A 0%, #000000 100%), 
+    linear-gradient(to bottom right, 
+      #A57DFF 0%,    /* Upper left: bright soft purple */
+      #8A69FF 50%,   /* Mid-tone purple */
+      #553EFF 100%   /* Lower right: dark purple */
+    );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  
+  color: white !important;
+  transition: all 0.2s ease;
+}
+
+/* Hover State: Border gradient now incorporates a touch of neon green, blue, and magenta */
+.btn-github:hover {
+  background-image: 
+    linear-gradient(to bottom right, #1C0A2A 0%, #000000 100%), 
+    linear-gradient(to bottom right, 
+      #00CC99 0%,       /* Upper left: subtle neon green/light-blue accent */
+      #00CC99 10%,      /* Confined to ~10% */
+      #4A90E2 40%,      /* Transition into a cool blue */
+      #E46AFF 70%,      /* Introduce a moderate magenta */
+      #6648FF 100%       /* Finishes with a dark purple */
+    );
+  box-shadow: inset 0 2px 4px rgba(121,72,248,0.4) !important;
+}
+
+/* Active State: Border gradient becomes more vivid with brighter greens, blues, and magentas */
+.btn-github:active {
+  background-image: 
+    linear-gradient(to bottom right, #1C0A2A 0%, #000000 100%), 
+    linear-gradient(to bottom right, 
+      #00FFCC 0%,       /* Brighter neon green/light-blue accent */
+      #00FFCC 10%,      /* Confined to ~10% */
+      #50D9FF 40%,      /* Vivid blue */
+      #FF7AFF 70%,      /* More vivid magenta */
+      #775EFF 100%       /* Rich, deep purple finish */
+    );
+  box-shadow: inset 0 4px 6px rgba(121,72,248,0.6) !important;
+  transform: translateY(2px);
+}
+
+
+/* Typography */
+.Card-Title {
+  font-family: var(--font-focal-medium);
+  font-size: 1.6em;
+  color: var(--color-white);
+}
+
+.Card-Subtitle {
+  font-family: var(--font-lyon-regular);
+  font-size: 1.2em;
+  color: var(--color-graphite-black);
+}
+
+.card img {
+  height: 300px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* DemoCards.css at the end */
+.override-train-smoke,
+.override-train-smoke * {
+  position: static !important;
+  top: 0 !important;
+  left: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  pointer-events: none !important;
+}
+
+/* BUTTON STYLING FOR ALL BUTTONS */
+
+/* -----------------------------
+   Base Layout (unchanged)
+----------------------------- */
+.demo-btn {
+  display: flex;
+  justify-content: center;   /* Center the inner block horizontally */
+  align-items: center;       /* Center the inner block vertically */
+  padding: 10px 15px;
+  font-family: var(--font-focal-medium);
+  transition: all 0.2s ease;
+  box-shadow: none !important;
+  border-radius: 8px;
+  text-decoration: none !important;
+}
+
+.button-content {
+  display: inline-flex;
+  align-items: center;       /* Vertically center both cells */
+  justify-content: center;
+}
+
+.icon-cell {
+  width: 32px;               /* Fixed width cell for the icon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-cell {
+  margin-left: 4px;          /* Default spacing between icon & text */
+  display: flex;
+  align-items: center;
+  text-align: left;
+  text-decoration: none !important;
+}
+
+/* -----------------------------
+   Two Sets of Shift Classes
+----------------------------- */
+
+/* Launch Button Shifts */
+.shiftX-launch-icon-short {
+  transform: translateX(-4px) !important; /* Slight shift for short version */
+  transition: transform 0.2s linear;
+}
+.shiftX-launch-icon-long {
+  transform: translateX(-4px) !important; /* Use same value (or adjust as needed) */
+  transition: transform 0.2s linear;
+}
+.shiftX-launch-text-short {
+  transform: translateX(-7px) !important; /* For short text */
+  transition: transform 0.2s linear;
+}
+.shiftX-launch-text-long {
+  transform: translateX(-6px) !important; /* For long text */
+  transition: transform 0.2s linear;
+}
+
+/* YouTube Button Shifts */
+.shiftX-youtube-icon-short {
+  transform: translateX(0px) !important; /* For short version */
+  transition: transform 0.2s linear;
+}
+.shiftX-youtube-icon-long {
+  transform: translateX(-4px) !important; /* For long version; adjust if needed */
+  transition: transform 0.2s linear;
+}
+.shiftX-youtube-text-short {
+  transform: translateX(-2px) !important;
+  transition: transform 0.2s linear;
+}
+.shiftX-youtube-text-long {
+  transform: translateX(-6px) !important;
+  transition: transform 0.2s linear;
+}
+
+/* GitHub Button Shifts */
+.shiftX-github-icon-short {
+  transform: translateX(-4.5 px) !important; /* For short text version */
+  transition: transform 0.2s linear;
+}
+.shiftX-github-icon-long {
+  transform: translateX(-7px) !important; /* For long text version */
+  transition: transform 0.2s linear;
+}
+.shiftX-github-text-short {
+  transform: translateX(-6px) !important;
+  transition: transform 0.2s linear;
+}
+.shiftX-github-text-long {
+  transform: translateX(-8px) !important;
+  transition: transform 0.2s linear;
+}
+
+/* -----------------------------
+   Optional: Individual Icon Sizing
+----------------------------- */
+.icon-launch-size {
+  font-size: 20px;  /* Change as needed for the Launch icon */
+}
+.icon-youtube-size {
+  font-size: 20px;  /* Change as needed for the YouTube icon */
+}
+.icon-github-size {
+  font-size: 20px;  /* Change as needed for the GitHub icon */
+}
+
+
+
+
+
+
+
+
+

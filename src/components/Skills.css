@@ -1,0 +1,13 @@
+/* src/components/Skills.css */
+.skills-page {
+  padding: 40px;
+  text-align: center;
+  font-family: var(--font-focal-medium);
+}
+.skills-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.skills-page p {
+  font-size: 1.125rem;
+}

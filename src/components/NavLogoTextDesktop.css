@@ -1,0 +1,196 @@
+@media only screen and (min-width: 769px) {
+  /* ========= Base Navbar Styles for Desktop ========= */
+  .navbar-wrapper {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: var(--color-deep-purple);
+    box-shadow: 0 6px 15px rgba(106, 90, 205, 0.7);
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* Ensure content below isn’t hidden by the fixed navbar */
+  body {
+    padding-top: 130px; 
+  } 
+
+  /* Container */
+  .navbar-container {
+    max-width: var(--desktop-max-width, 1280px);
+    margin: 0 auto;
+    padding: 0px var(--app-wide-gutter);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* ========= Logo Styles ========= */
+  .navbar-logo {
+    margin-right: 15px;
+    width: 123px;
+    height: 130px;
+    /* Additional desktop-specific styles can be added here */
+  }
+
+  .navbar-logo img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ========= Navbar Text Containers ========= */
+  .navbar-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-text-wrapper {
+    position: relative;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ========= Text Element Styles ========= */
+  .NavBar-Ln1,
+  .NavBar-Ln2 {
+    white-space: nowrap;
+    /* Font-family set via inline or inherited */
+  }
+
+  /* Base sizes are inherited from inline computed styles.
+     These media queries serve as the default stepped clamps for non‐hover text. */
+  @media (min-width: 1280px) {
+    .NavBar-Ln1 {
+      font-size: 50px;
+    }
+    .NavBar-Ln2 {
+      font-size: 36px;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .NavBar-Ln1 {
+      font-size: calc(45px + ((100vw - 1024px) / 256) * 5);
+    }
+    .NavBar-Ln2 {
+      font-size: calc(32px + ((100vw - 1024px) / 256) * 4);
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1023px) {
+    .NavBar-Ln1 {
+      font-size: calc(21px + ((100vw - 769px) / 255) * 24);
+    }
+    .NavBar-Ln2 {
+      font-size: calc(16px + ((100vw - 769px) / 255) * 16);
+    }
+  }
+
+  /* ========= Gradient Text Fill Styles ========= */
+  .glow-react,
+  .glow-email,
+  .glow-linkedin,
+  .glow-pdf {
+    background: linear-gradient(180deg, #00EAFF 0%, #00C6FF 50%, #008ACF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glow-cmu {
+    background: linear-gradient(180deg, #FDB515 0%, #F6782E 50%, #C41230 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glow-mit {
+    background: linear-gradient(180deg, #00EAFF 0%, #00C6FF 50%, #008ACF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+
+
+/* Mask to reveal only the dot ("tittle") of the "i" and hide the stem */
+.glow-cmu-i-dot-mask {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  color: transparent; /* prevent fallback rendering */
+  background: linear-gradient(to right, var(--glow-cmu));
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: var(--font-focal-extrabold);
+  line-height: 1;
+  z-index: 3;
+  /* Reveal only the top part (dot), hide the stem */
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 25%, transparent 26%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 25%, transparent 26%, transparent 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+
+
+
+
+
+  /* ========= Utility Classes ========= */
+  .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .full-height {
+    height: 100%;
+  }
+
+  .reserved-space {
+    flex-shrink: 0;
+  }
+
+  .text-shadow-3d {
+    text-shadow:
+      1px 1px 2px rgba(0, 0, 0, 0.3),
+      2px 2px 4px rgba(0, 0, 0, 0.2),
+      3px 3px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* ========= Desktop Nav Icons (if applicable) ========= */
+  .nav-icons-desktop {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-icons-desktop > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-icons-desktop > div > span {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+}
+
+

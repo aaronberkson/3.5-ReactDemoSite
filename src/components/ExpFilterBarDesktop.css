@@ -1,0 +1,64 @@
+/* ─── root defaults ───────────────────────────────────────── */
+:root {
+  /* original default from your old CSS */
+  --filter-pills-offset-y: 4px;
+}
+
+/* only desktop pills—uses your original selectors */
+.experience-inner .filter-pills {
+  display:       flex;
+  flex-wrap:     wrap;
+  gap:           0.5rem;
+  /* use the CSS var, but fall back to 0.25rem if it’s undefined */
+  margin-top:    var(--filter-pills-offset-y, 0.25rem);
+}
+
+@media (min-width: 1280px) {
+  .experience-inner .filter-pills {
+    flex-wrap: nowrap;
+  }
+}
+
+.experience-inner .filter-radio {
+  display: none;
+}
+
+/* pills always use Focal Medium now */
+.experience-inner .filter-pill {
+  font-family:   var(--font-focal-medium);
+  font-size:     0.9rem;
+  padding:       0.4rem 0.91rem;
+  border-radius: 999px;
+  cursor:        pointer;
+  text-decoration: none;
+  transition:    background 0.2s, color 0.2s, transform 0.1s;
+  background:    linear-gradient(135deg,#e0d4ff 0%,#c5b3ff 100%);
+  color:         #333;
+}
+
+/* checked state */
+.experience-inner .filter-radio:checked + .filter-pill {
+  background:    linear-gradient(135deg,#ff7a00 0%,#ffb000 100%);
+  color:         #fff;
+  pointer-events:none;
+}
+
+/* grid & label setup */
+.experience-inner .filter-bar {
+  display:               grid;
+  grid-template-columns: auto 1fr;
+  column-gap:            1rem;
+  row-gap:               0.5rem;
+  align-items:           start;
+  margin-bottom:         1rem;
+}
+.experience-inner .filter-label-group {
+  display:     flex;
+  align-items: center;
+  gap:         0.5rem;
+}
+
+/* override the desktop/mobile .filter-label to use Focal Bold */
+.experience-inner .filter-label {
+  font-family: var(--font-focal-bold);
+}

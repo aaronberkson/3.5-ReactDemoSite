@@ -1,0 +1,265 @@
+/* DemoCardsDesktop.css */
+
+/* ---------------------------------------------------
+   3D Card Container
+--------------------------------------------------- */
+.demo-card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: box-shadow 0.3s ease;
+  overflow: visible;
+}
+
+/* ---------------------------------------------------
+   New Thin 3D Variations – Adjusted for Subtle Darkening and Enhanced Contrast,
+   with a pronounced upper-left inset highlight (simulating light from above).
+--------------------------------------------------- */
+
+/* Card 1 – Primary (Lightest Gray Variation) */
+.card-thin-3d-primary {
+  /* Darkened background: each stop shifted to a deeper tone */
+  background: linear-gradient(145deg, #6F6F6F 0%, #5B5F5F 40%, #444444 100%);
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  /* Outer shadow plus two inset shadows for the metallic look */
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.35),
+    inset -4px -4px 10px rgba(255, 255, 255, 0.45),
+    inset 4px 4px 8px rgba(0, 0, 0, 0.50);
+  overflow: visible;
+}
+
+/* Card 2 – Secondary (Medium Gray Variation) */
+.card-thin-3d-secondary {
+  background: linear-gradient(145deg, #5F5F5F 0%, #4E4E4F 40%, #393939 100%);
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.35),
+    inset -4px -4px 10px rgba(255, 255, 255, 0.45),
+    inset 4px 4px 8px rgba(0, 0, 0, 0.50);
+  overflow: visible;
+}
+
+/* Card 3 – Tertiary (Darkest Gray Variation) */
+.card-thin-3d-tertiary {
+  background: linear-gradient(145deg, #4F4F4F 0%, #3F3F3F 40%, #2C2C2C 100%);
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.35),
+    inset -4px -4px 10px rgba(255, 255, 255, 0.45),
+    inset 4px 4px 8px rgba(0, 0, 0, 0.50);
+  overflow: visible;
+}
+
+/* ---------------------------------------------------
+   Existing DemoCards Desktop Styles (Buttons, Typography, etc.)
+--------------------------------------------------- */
+
+/* Demo button styles */
+.launch-demo-btn {
+  background-color: #0d6efd !important;
+  border-color: #0d6efd !important;
+  transition: all 0.2s ease;
+  box-shadow: none !important;
+}
+.launch-demo-btn:hover {
+  background-color: #0b5ed7 !important;
+  border-color: #0b5ed7 !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+.launch-demo-btn:active {
+  background-color: #0a58ca !important;
+  border-color: #0a58ca !important;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+  transform: translateY(2px);
+}
+.demo-btn {
+  width: 280px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  font-family: var(--font-focal-medium);
+  transition: all 0.2s ease;
+  box-shadow: none !important;
+}
+.btn-launch {
+  background-color: #0d6efd !important;
+  border-color: #0d6efd !important;
+  color: white !important;
+}
+.btn-launch:hover {
+  background-color: #0c63e4 !important;
+  border-color: #0c63e4 !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+}
+.btn-launch:active {
+  background-color: #0b5ed7 !important;
+  border-color: #0b5ed7 !important;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.25) !important;
+  transform: translateY(2px);
+}
+.btn-youtube {
+  background-color: #ff0000 !important;
+  border-color: #ff0000 !important;
+  color: white !important;
+}
+.btn-youtube:hover {
+  background-color: #e60000 !important;
+  border-color: #e60000 !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+}
+.btn-youtube:active {
+  background-color: #cc0000 !important;
+  border-color: #cc0000 !important;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.25) !important;
+  transform: translateY(2px);
+}
+.btn-github {
+  background-color: #24292F !important;
+  border-color: #24292F !important;
+  color: white !important;
+}
+.btn-github:hover {
+  background-color: #2B3138 !important;
+  border-color: #2B3138 !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+}
+.btn-github:active {
+  background-color: #32383F !important;
+  border-color: #32383F !important;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.25) !important;
+  transform: translateY(2px);
+}
+
+/* Card Typography */
+.Card-Title {
+  font-family: var(--font-focal-medium);
+  font-size: 1.6em;
+  color: var(--color-white);
+}
+.Card-Subtitle {
+  font-family: var(--font-lyon-regular);
+  font-size: 1.2em;
+  color: var(--color-graphite-black);
+}
+
+/* Logo Container within Cards */
+.card img {
+  height: 300px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Buttons (links within cards) */
+.card-buttons a {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 15px;
+  width: 260px;
+  background-color: var(--color-electric-blue);
+  color: var(--color-white);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
+}
+.card-buttons a:hover {
+  opacity: 0.9;
+}
+
+/* Button Typography */
+.Btn-ViewDemo {
+  font-family: var(--font-focal-regular);
+  font-size: 1em;
+  color: var(--color-white);
+}
+.Btn-YouTubeWalkThru {
+  font-family: var(--font-focal-bold);
+  font-size: 1em;
+  color: var(--color-white);
+}
+.Btn-GitHub {
+  font-family: var(--font-focal-regular);
+  font-size: 1em;
+  color: var(--color-white);
+}
+
+/* Title and Subtitle */
+.card-title {
+  font-family: var(--font-focal-bold);
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.card-subtitle {
+  font-family: var(--font-lyon-regular);
+  font-size: 1.2em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------
+   Smooth Brushed Metal Overlay Effect (Revised & Darkened)
+--------------------------------------------------- */
+
+.card-thin-3d-primary,
+.card-thin-3d-secondary,
+.card-thin-3d-tertiary {
+  position: relative; /* Ensure the pseudo-element is positioned relative to the card */
+}
+
+.card-thin-3d-primary::after,
+.card-thin-3d-secondary::after,
+.card-thin-3d-tertiary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: inherit;
+  /* The overlay uses a darker gradient overall to nudge down the brightness */
+  background: linear-gradient(145deg, rgba(200, 200, 200, 0.12) 0%, rgba(225, 225, 225, 0.06) 100%);
+  opacity: 0.85;
+  filter: blur(0.2px);
+  transition: opacity 0.3s ease;
+}
+
+.card-thin-3d-primary:hover::after,
+.card-thin-3d-secondary:hover::after,
+.card-thin-3d-tertiary:hover::after {
+  opacity: 1;
+}
+
+/* ---------------------------------------------------
+   Capstone Badge Offset
+--------------------------------------------------- */
+.capstone-badge-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  /* The transform is now applied via inline style in the JSX using the defined constants */
+}
+
+/* ---------------------------------------------------
+   New Card Media Container for Image & Animated Logo
+--------------------------------------------------- */
+.card-media {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-media img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}

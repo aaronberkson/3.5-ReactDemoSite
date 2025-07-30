@@ -1,0 +1,88 @@
+/* DemoCards.css */
+.launch-demo-btn {
+  background-color: #0d6efd !important;
+  border-color: #0d6efd !important;
+  transition: all 0.2s ease;
+  box-shadow: none !important;
+}
+
+.launch-demo-btn:hover {
+  background-color: #0b5ed7 !important;
+  border-color: #0b5ed7 !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.launch-demo-btn:active {
+  background-color: #0a58ca !important;
+  border-color: #0a58ca !important;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+  transform: translateY(2px);
+}
+
+.demo-btn {
+  width: 280px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  font-family: var(--font-focal-medium);
+  transition: all 0.2s ease;
+  box-shadow: none !important;
+}
+
+.btn-launch {
+  background-color: #0d6efd !important;
+  border-color: #0d6efd !important;
+  color: white !important;
+}
+.btn-launch:hover {
+  background-color: #0c63e4 !important;
+  border-color: #0c63e4 !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+}
+.btn-launch:active {
+  background-color: #0b5ed7 !important;
+  border-color: #0b5ed7 !important;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.25) !important;
+  transform: translateY(2px);
+}
+
+.btn-youtube {
+  background-color: #ff0000 !important;
+  border-color: #ff0000 !important;
+  color: white !important;
+}
+.btn-youtube:hover {
+  background-color: #e60000 !important;
+  border-color: #e60000 !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+}
+.btn-youtube:active {
+  background-color: #cc0000 !important;
+  border-color: #cc0000 !important;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.25) !important;
+  transform: translateY(2px);
+}
+
+.btn-github {
+  background-color: #24292F !important;
+  border-color: #24292F !important;
+  color: white !important;
+}
+
+.btn-github:hover {
+  /* Lighten the default color (#24292F) by about 20% */
+  background-color: #2B3138 !important;
+  border-color: #2B3138 !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn-github:active {
+  /* Even lighter for active state */
+  background-color: #32383F !important;
+  border-color: #32383F !important;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.25) !important;
+  transform: translateY(2px);
+}
+

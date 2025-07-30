@@ -1,0 +1,13 @@
+@font-face {
+	font-family: 'Focal-BlackItalic-Web';
+	src: url('Focal-BlackItalic-Web.woff2') format('woff2'),
+		 url('Focal-BlackItalic-Web.woff') format('woff');
+	font-weight: 900;
+	font-style: italic;
+	}
+
+.Focal-BlackItalic-Web {
+	font-family: 'Focal-BlackItalic-Web';
+	font-weight: 900;
+	font-style: italic;
+	}

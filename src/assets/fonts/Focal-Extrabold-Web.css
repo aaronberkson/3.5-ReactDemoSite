@@ -1,0 +1,13 @@
+@font-face {
+	font-family: 'Focal-Extrabold-Web';
+	src: url('Focal-Extrabold-Web.woff2') format('woff2'),
+		 url('Focal-Extrabold-Web.woff') format('woff');
+	font-weight: 800;
+	font-style: normal;
+	}
+
+.Focal-Extrabold-Web {
+	font-family: 'Focal-Extrabold-Web';
+	font-weight: 800;
+	font-style: normal;
+	}

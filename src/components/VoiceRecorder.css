@@ -1,0 +1,192 @@
+.vr-container {
+  display:        flex;
+  align-items:    center;
+  gap:            9px;
+  height:         48px;
+}
+
+/* PILLS */
+.vr-pill {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  gap:             6px;
+  width:           90px;       /* fixed width */
+  height:          36px;
+  padding:         0;
+  background:      linear-gradient(145deg, #f5f5f5, #d4d4d4);
+  color:           #555;
+  font-family:     var(--font-focal-medium);
+  font-size:       14px;
+  border:          1px solid;
+  border-radius:   999px;
+  box-shadow:      0 2px 4px rgba(0,0,0,0.1);
+  cursor:          pointer;
+  user-select:     none;
+  transition:      all 0.2s;
+  background-image: url('../assets/silver-btn-wide.svg') !important;
+}
+.vr-pill.idle       { border-color: #ff3f4a; }
+.vr-pill.recording  { border-color: #e74c3c; }
+.vr-pill.stopped    { border-color: #27ae60; }
+.vr-pill.playing    { border-color: #2ecc71; }
+.vr-pill:hover      { filter: brightness(0.9); }
+.vr-pill:active     { filter: brightness(0.8); transform: translateY(1px); }
+
+/* Instruction text */
+.vr-instr {
+  font-family:    var(--font-focal-regular-italic);
+  font-size:      16px;
+  color:          #fff;
+}
+
+/* WAVE AREA */
+.vr-wave-wrap {
+  flex-grow:     1;
+  height:        50px;
+  position:      relative;
+  overflow:      hidden;
+  border-radius:  2px;
+}
+.vr-canvas {
+  width:  100%;
+  height: 48px;
+}
+.vr-wavesurfer {
+  width:  100%;
+  height: 48px;
+}
+
+/* ensure waveform is below the overlay */
+.vr-wave-wrap .vr-canvas,
+.vr-wave-wrap .vr-wavesurfer {
+  position: relative;  /* already is, but ensure it */
+  z-index: 1;
+}
+
+/* TIME OVERLAY */
+.vr-time-overlay {
+  z-index:   2;      /* top of the wave */
+  position:        absolute;
+  bottom:          4px;
+  right:           0px;
+  padding:         2px 6px;
+  font-size:       11px;
+  font-family:     var(--font-focal-medium);
+   color:           #555 !important;
+  background-color: rgba(255,255,255,0.66);
+  border-radius:   4px;
+  pointer-events:  none;
+}
+
+/* TRASH BUTTON */
+.vr-trash {
+  width:           32px;
+  height:          32px;
+  border:          1px solid #c0392b;
+  border-radius:   50%;
+  background:      linear-gradient(145deg, #f5f5f5, #d4d4d4);
+  box-shadow:      0 2px 4px rgba(0,0,0,0.2);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  cursor:          pointer;
+  transition:      all 0.2s;
+  color:           #c0392b;
+  background-image: url('../assets/silver-btn-circle.svg') !important;
+}
+.vr-trash:hover    { filter: brightness(0.9); }
+.vr-trash:active   { filter: brightness(0.8); transform: scale(0.95); }
+
+/* ── Tiny, centered REC overlay ───────────────────────── */
+.vr-rec-overlay {
+  position:       absolute;
+  bottom:         5px;
+  right:          7px;
+  background:     rgba(255,255,255,0.9);
+  padding:        0 4px;             /* only horizontal padding */
+  height:         14px;              /* fixed small height */
+  line-height:    14px;              /* centers text if needed */
+  border-radius:  2px;
+  display:        inline-flex;
+  align-items:    center;            /* vertical centering */
+  justify-content:center;
+  z-index:        3;
+}
+
+/* ── Blinking text+dot, same fade keyframes ───────────── */
+.vr-rec-blink {
+  display:      inline-flex;
+  align-items:  center;
+  gap:          2px;                 /* tight icon–text gap */
+  font-size:    8px;                 /* small label */
+  font-family:  var(--font-focal-medium);
+  color:        #e74c3c;
+  animation:    vr-fade 1s ease-in-out infinite;
+}
+
+/* ── Shrink the red dot a bit ─────────────────────────── */
+.vr-rec-dot {
+  font-size:    0.7em;
+}
+
+/* ── Your existing keyframes stay the same ────────────── */
+@keyframes vr-fade {
+  0%, 20%     { opacity: 0; }
+  50%         { opacity: 1; }
+  80%, 100%   { opacity: 0; }
+}
+
+:root {
+  --vr-accent: #006666;
+  --vr-accent-message: #32CD32;
+}
+
+/* ── CURRENT scrubber time (only when playing) ───────── */
+.vr-time-left {
+  position:       absolute;
+  bottom:         4px;                 /* 4px from bottom */
+  left:           0px;                 /* match your gutters */
+  background:   rgba(0, 102, 102, 0.15);  /* 15% opacity of #006666 */
+  padding:        1px 4px;
+  border-radius:  2px;
+  font-size:      10px;
+  font-family:    var(--font-focal-medium);
+  color:          var(--vr-accent);
+  opacity:        0;                   /* hidden by default */
+  transition:     opacity .2s ease;
+  pointer-events: none;
+  z-index:        2;
+}
+
+.vr-time-left-message {
+  /* Darker / less transparent when in “message” mode */
+  background: rgba(0, 102, 102, 0.77);
+}
+
+.vr-wave-wrap.playing .vr-time-left {
+  opacity: 1;  /* fade in when .playing */
+}
+
+/* ── TOTAL duration (always visible) ────────────────── */
+.vr-time-right {
+  position:       absolute;
+  bottom:         4px;
+  right:          0px;
+  background:     rgba(255,255,255,0.8);
+  padding:        1px 4px;
+  border-radius:  2px;
+  font-size:      10px;
+  font-family:    var(--font-focal-medium);
+  color:          #555;
+  pointer-events: none;
+  z-index:        2;
+}
+
+/* show current-time when playing OR when there’s any progress */
+.vr-wave-wrap.playing .vr-time-left,
+.vr-wave-wrap.has-progress .vr-time-left {
+  opacity: 1;
+}
+
+

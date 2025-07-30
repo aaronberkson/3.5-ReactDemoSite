@@ -1,0 +1,137 @@
+/* ---------------------------------------------------------------- */
+/* NavSections.base.css                                             */
+/* Shared, non-layout styles only                                   */
+/* ---------------------------------------------------------------- */
+
+.nav-sections {
+  position:        relative;
+  display:         flex;
+  align-items:     center;
+  padding-bottom:  0;
+
+  /* custom properties for shadows, underline, gradients */
+  --nav-underline-gap:         4px;
+  --nav-shadow-offset-x:      -2px;
+  --nav-shadow-offset-y:       5.5px;
+  --nav-gradient-hover-opacity: 0.4;
+  --nav-gradient-press-opacity: 0.7;
+  --nav-underline-height:       4px;
+  --nav-underline-border-radius: 0;
+}
+
+/* Tabs */
+.nav-item {
+  position:        relative;
+  display:         inline-block;
+  cursor:          pointer;
+  user-select:     none;
+  font-family:     var(--font-focal-medium);
+  font-size:       1em;
+  color:           #EDEDED;
+  transition:      font-family 0.3s ease, color 0.3s ease;
+}
+
+/* hidden bold-measure */
+.nav-item .item-measure-bold {
+  position:       absolute;
+  visibility:     hidden;
+  white-space:    nowrap;
+  font-family:    var(--font-focal-bold);
+  font-size:      inherit;
+  line-height:    1;
+}
+
+/* shadowed text */
+.nav-item .item-shadow {
+  position: absolute;
+  z-index:   1;
+  top:       var(--nav-shadow-offset-y);
+  left:      var(--nav-shadow-offset-x);
+  color:     black;
+}
+
+/* main text */
+.nav-item .item-main {
+  position:   relative;
+  z-index:    2;
+  color:      #EDEDED;
+  transition: color 0.3s ease;
+}
+
+/* gradient hover & active */
+.nav-item .item-main::before {
+  content:        attr(data-label);
+  position:       absolute;
+  inset:          0;
+  background:     linear-gradient(180deg, #00EAFF 0%, #00C6FF 50%, #008ACF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color:          transparent;
+  opacity:        0;
+  transition:     opacity 0.3s ease;
+}
+.nav-item:not(.active):hover .item-main::before {
+  opacity: var(--nav-gradient-hover-opacity);
+}
+.nav-item:not(.active):active .item-main::before {
+  opacity: var(--nav-gradient-press-opacity);
+}
+.nav-item.active {
+  font-family: var(--font-focal-bold);
+}
+.nav-item.active .item-main {
+  color: transparent;
+}
+.nav-item.active .item-main::before {
+  opacity: 1;
+}
+
+/* Separators */
+.nav-separator {
+  position:     relative;
+  display:      inline-flex;
+  align-items:  center;
+  user-select:  none;
+  font-family:  var(--font-focal-light);
+  font-size:    0.8em;
+  color:        #DDDDDD;
+}
+.nav-separator .separator-shadow {
+  position: absolute;
+  z-index:   1;
+  top:       var(--nav-shadow-offset-y);
+  left:      var(--nav-shadow-offset-x);
+  color:     black;
+}
+.nav-separator .separator-main {
+  position:  relative;
+  z-index:   2;
+  color:     #DDDDDD;
+}
+
+/* Underlines */
+.nav-sections-underline,
+.nav-sections-underline-shadow {
+  position: absolute;
+  left:     0;
+  bottom:   calc(-1 * var(--nav-underline-gap));
+  height:   var(--nav-underline-height);
+  border-radius: var(--nav-underline-border-radius);
+}
+.nav-sections-underline-shadow {
+  z-index: 1;
+  background: black;
+  transform: translate(
+    var(--nav-shadow-offset-x),
+    var(--nav-shadow-offset-y)
+  );
+}
+.nav-sections-underline {
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    #00EAFF  0%,
+    #00C6FF 50%,
+    #008ACF 100%
+  );
+}

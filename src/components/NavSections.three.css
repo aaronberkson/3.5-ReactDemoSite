@@ -1,0 +1,58 @@
+/* ---------------------------------------------------------------- */
+/* NavSections.three.css                                            */
+/* All sizing & media queries for 3-tab layout (exact original)    */
+/* ---------------------------------------------------------------- */
+
+.nav-sections.three {
+  /* gap and font-size exactly as original */
+  gap:       var(--nav-separator-gap);
+  font-size: clamp(18px, 2.2vw + 0.5rem, 36px);
+
+  /* custom property default */
+  --nav-separator-gap: clamp(6px, 1vw + 2px, 16px);
+}
+
+/* mobile variants */
+@media (max-width: 599px) {
+  .nav-sections.three {
+    --nav-separator-gap: clamp(4px, 1vw, 10px);
+  }
+}
+
+/* mid-range */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .nav-sections.three {
+    --nav-separator-gap: clamp(5px, 1vw + 1px, 12px);
+  }
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+  .nav-sections.three {
+    --nav-separator-gap: clamp(6px, 1vw + 2px, 14px);
+  }
+}
+
+/* “liquid” font for <=768px */
+@media only screen and (max-width: 768px) {
+  .nav-sections.three {
+    font-size: clamp(
+      22px,
+      calc(22px + ((100vw - 320px) / 448) * 14px),
+      36px
+    );
+    --nav-separator-gap: clamp(
+      4px,
+      calc(4px + ((100vw - 320px) / 448) * 12px),
+      16px
+    );
+  }
+}
+
+/* mobile-specific spacing override */
+@media (max-width: 1023px) {
+  .nav-sections-mobile.three,
+  .nav-sections.three {
+    --nav-separator-gap: clamp(8px, 4vw, 16px);
+  }
+}

@@ -1,0 +1,25 @@
+/* ---------------------------------------------------
+   Portal’d Filter Bar: fixed positioning only
+--------------------------------------------------- */
+.experience-header {
+  position:       fixed !important;
+  top:            186px;            /* same as FILTER_BAR_OFFSET */
+  left:           0;
+  right:          0;
+  z-index:        1000 !important;
+  pointer-events: auto   !important;
+}
+
+/* ---------------------------------------------------
+   Inner wrapper: horizontal gutters only
+   – Constrained to desktop max-width and centered
+--------------------------------------------------- */
+.header-inner {
+  max-width:      var(--desktop-max-width);
+  margin-inline:  auto;
+  padding-inline: var(--container-padding-x);
+  box-sizing:     border-box;
+  white-space:    nowrap;           /* keep the header‐inner itself from wrapping */
+  background:     transparent !important;
+  box-shadow:     none        !important;
+}
