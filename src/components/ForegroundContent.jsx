@@ -1,6 +1,7 @@
 // src/components/ForegroundContent.jsx
 import React, { Suspense, useState, useEffect } from "react";
 import { motion }                     from "framer-motion";
+import { useAppReady }                from "../contexts/AppReadyContext";
 import NavLogoText                    from "./NavLogoText";
 import NavIconsDesktop                from "./NavIconsDesktop";
 import NavIconsMobile                 from "./NavIconsMobile";
@@ -15,6 +16,7 @@ import "./ForegroundContent.css";
 const MOBILE_BREAKPOINT = 768;
 
 export default function ForegroundContent({ startAnimation }) {
+  const { appReady } = useAppReady();
   const [section, setSection] = useState("demos");
   const [isMobile, setIsMobile] = useState(
     typeof window !== 'undefined' && window.innerWidth <= MOBILE_BREAKPOINT
@@ -25,6 +27,9 @@ export default function ForegroundContent({ startAnimation }) {
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
+
+  // wait until all preload flags are ready
+  if (!appReady) return null;
 
   return (
     <div className="fc-root">
@@ -37,7 +42,7 @@ export default function ForegroundContent({ startAnimation }) {
         {/* DemoCards as static UI */}
         <motion.div
           className="demo-wrapper"
-          style={{ position: 'absolute', inset: 0 }}
+          style={{ position: 'absolute', inset: 0, pointerEvents: section === 'demos' ? 'auto' : 'none' }}
           initial={false}
           animate={{ opacity: section === 'demos' ? 1 : 0 }}
           transition={{ duration: 0.5 }}
@@ -48,20 +53,20 @@ export default function ForegroundContent({ startAnimation }) {
         {/* Experience Canvas wrapper */}
         <motion.div
           className="experience-wrapper"
-          style={{ position: 'absolute', inset: 0 }}
+          style={{ position: 'absolute', inset: 0, pointerEvents: section === 'experience' ? 'auto' : 'none' }}
           initial={false}
           animate={{ opacity: section === 'experience' ? 1 : 0 }}
           transition={{ duration: 0.5 }}
         >
           <Suspense fallback={null}>
-            <Experience startAnimation={startAnimation} />
+            <Experience />
           </Suspense>
         </motion.div>
 
         {/* Skills Canvas wrapper */}
         <motion.div
           className="skills-wrapper"
-          style={{ position: 'absolute', inset: 0 }}
+          style={{ position: 'absolute', inset: 0, pointerEvents: section === 'skills' ? 'auto' : 'none' }}
           initial={false}
           animate={{ opacity: section === 'skills' ? 1 : 0 }}
           transition={{ duration: 0.5 }}
@@ -75,7 +80,7 @@ export default function ForegroundContent({ startAnimation }) {
         {ABOUT_SECTION_ACTIVE && (
           <motion.div
             className="about-wrapper"
-            style={{ position: 'absolute', inset: 0 }}
+            style={{ position: 'absolute', inset: 0, pointerEvents: section === 'about' ? 'auto' : 'none' }}
             initial={false}
             animate={{ opacity: section === 'about' ? 1 : 0 }}
             transition={{ duration: 0.5 }}
